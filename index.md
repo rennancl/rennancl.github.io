@@ -6,6 +6,8 @@ layout: homepage
 
 Hello! I am Rennan Lima, a MSc student at Universidade Federal de Minas Gerais (UFMG) supervised by Prof. Rodrygo Santos. My main research interest is information retrieval, and I am currently researching neural ranking models for long documents based on Transformers.
 
+CV: [[english PDF](https://homepages.dcc.ufmg.br/~rennancordeiro/cv_resume.pdf)], [[google scholar](https://scholar.google.com/citations?user=CIopUhUAAAAJ&hl=en)]
+
 ## Publications
 
 - **[SocInfo 2022] On the presence of abusive language in misinformation**
