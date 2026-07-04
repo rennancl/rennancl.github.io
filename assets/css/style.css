@@ -1,0 +1,174 @@
+:root {
+  --bg: #faf9f6;
+  --text: #2a2a2a;
+  --muted: #6b6b6b;
+  --accent: #2c5f6f;
+  --rule: #ddd8cd;
+  --serif: ui-serif, Georgia, "Times New Roman", serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0 1.5rem;
+}
+
+main,
+header,
+footer {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+header.page-header {
+  padding: 4rem 0 2rem;
+}
+
+.avatar {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.25rem;
+}
+
+h1 {
+  font-family: var(--serif);
+  font-size: 2rem;
+  margin: 0 0 0.25rem;
+}
+
+.title {
+  color: var(--muted);
+  margin: 0 0 1rem;
+  font-size: 1.05rem;
+}
+
+.bio {
+  margin: 0 0 1.25rem;
+  max-width: 60ch;
+}
+
+.links a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+.links .sep {
+  color: var(--muted);
+  margin: 0 0.5rem;
+}
+
+section {
+  padding: 2rem 0;
+  border-top: 1px solid var(--rule);
+}
+
+section h2 {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  margin: 0 0 1.25rem;
+}
+
+.entry {
+  margin-bottom: 1.5rem;
+}
+
+.entry:last-child {
+  margin-bottom: 0;
+}
+
+.entry-title {
+  font-weight: 600;
+  margin: 0;
+}
+
+.entry-meta {
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin: 0.15rem 0 0.4rem;
+}
+
+.entry-desc {
+  margin: 0;
+}
+
+.pub-title {
+  font-weight: 600;
+  margin: 0 0 0.2rem;
+}
+
+.pub-meta {
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin: 0 0 1.25rem;
+}
+
+.skills-line {
+  margin: 0 0 0.6rem;
+}
+
+.skills-line .label {
+  color: var(--muted);
+}
+
+footer {
+  padding: 2.5rem 0 4rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+footer a {
+  color: var(--accent);
+}
+
+.resume-actions {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin: 1.5rem 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.55rem 1.1rem;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+.btn:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.pdf-embed {
+  width: 100%;
+  height: 85vh;
+  border: 1px solid var(--rule);
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .links a {
+    display: inline-block;
+    margin-bottom: 0.3rem;
+  }
+}
