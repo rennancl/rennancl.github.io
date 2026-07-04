@@ -21,6 +21,15 @@ body {
   padding: 0 1.5rem;
 }
 
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 main,
 header,
 footer {
@@ -65,24 +74,6 @@ h1 {
 .bio {
   margin: 0 0 1.25rem;
   max-width: 60ch;
-}
-
-.bio a {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-.bio a:hover {
-  text-decoration: underline;
-}
-
-.links a {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-.links a:hover {
-  text-decoration: underline;
 }
 
 .links .sep {
@@ -147,10 +138,6 @@ footer {
   padding: 2.5rem 0 4rem;
   color: var(--muted);
   font-size: 0.92rem;
-}
-
-footer a {
-  color: var(--accent);
 }
 
 .resume-actions {
