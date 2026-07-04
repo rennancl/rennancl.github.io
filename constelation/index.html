@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>constelação</title>
+<style>
+:root{--ink:#fff;--muted:rgba(255,255,255,.62);--field:rgba(8,13,18,.28);--fieldline:rgba(255,255,255,.25);--btn:rgba(255,255,255,.93);--btnink:#132119}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden}body{background:#1a3043;color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;transition:background-color .75s ease,color .25s ease}
+#sky{position:fixed;inset:0;width:100vw;height:100vh;display:block}.control{position:fixed;top:50%;left:50%;width:min(340px,calc(100vw - 40px));transform:translate(-50%,-50%);display:grid;justify-items:center;gap:11px}
+textarea{width:100%;height:76px;resize:none;padding:15px 17px;border:1px solid var(--fieldline);border-radius:17px;background:var(--field);color:var(--ink);box-shadow:0 14px 35px rgba(0,0,0,.14);backdrop-filter:blur(13px);-webkit-backdrop-filter:blur(13px);font:inherit;font-size:.95rem;line-height:1.45;outline:none;transition:border-color .18s,background-color .18s,box-shadow .18s}textarea::placeholder{color:var(--muted)}textarea:focus{border-color:rgba(255,255,255,.6);background:rgba(8,13,18,.36);box-shadow:0 0 0 4px rgba(255,255,255,.10),0 14px 35px rgba(0,0,0,.14)}
+button{appearance:none;border:0;border-radius:999px;padding:10px 16px;background:var(--btn);color:var(--btnink);font:inherit;font-size:.84rem;font-weight:760;cursor:pointer;transition:transform .16s,filter .16s,opacity .16s}button:hover{transform:translateY(-1px);filter:brightness(.98)}button:disabled{opacity:.55;cursor:not-allowed;transform:none}
+#status{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);width:min(560px,calc(100vw - 40px));text-align:center;color:var(--muted);font-size:.76rem;letter-spacing:.01em;pointer-events:none}@media(max-width:560px){.control{width:min(320px,calc(100vw - 36px))}textarea{height:72px}#status{bottom:16px}}
+</style>
+</head>
+<body>
+<canvas id="sky"></canvas>
+<div class="control"><textarea id="input" aria-label="Texto ou URL" placeholder="texto ou URL"></textarea><button id="run">gerar constelação</button></div>
+<div id="status">constelação deste acesso</div>
+<script>
+const canvas=document.getElementById('sky'),ctx=canvas.getContext('2d'),input=document.getElementById('input'),run=document.getElementById('run'),status=document.getElementById('status');let currentSeed='';
+const fnv1a=s=>{let h=0x811c9dc5;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,0x01000193)}return h>>>0};
+const mulberry32=s=>()=>{let t=s+=0x6D2B79F5;t=Math.imul(t^(t>>>15),t|1);t^=t+Math.imul(t^(t>>>7),t|61);return((t^(t>>>14))>>>0)/4294967296};
+function visitor(){const k='constellation-visitor-id';let v=localStorage.getItem(k);if(!v){const a=new Uint32Array(4);crypto.getRandomValues(a);v=Array.from(a,n=>n.toString(16).padStart(8,'0')).join('');localStorage.setItem(k,v)}return v}
+function isUrl(s){try{const u=new URL(s);return u.protocol==='http:'||u.protocol==='https:'}catch{return false}}
+function clean(s){return String(s||'').replace(/^Title:\s*.*$/gmi,'').replace(/^URL Source:\s*.*$/gmi,'').replace(/^Markdown Content:\s*$/gmi,'').replace(/!\[[^\]]*\]\([^)]+\)/g,'').replace(/\[([^\]]+)\]\([^)]+\)/g,'$1').replace(/[`*_>#]/g,' ').replace(/\s+/g,' ').trim()}
+async function pageText(s){const u=new URL(s),r=`https://r.jina.ai/http://${u.toString().replace(/^https?:\/\//,'')}`,q=await fetch(r);if(!q.ok)throw Error();const t=clean(await q.text());if(!t)throw Error();return t}
+function hsl(h,s,l){s/=100;l/=100;const c=(1-Math.abs(2*l-1))*s,x=c*(1-Math.abs((h/60)%2-1)),m=l-c/2;let r=0,g=0,b=0;if(h<60)[r,g,b]=[c,x,0];else if(h<120)[r,g,b]=[x,c,0];else if(h<180)[r,g,b]=[0,c,x];else if(h<240)[r,g,b]=[0,x,c];else if(h<300)[r,g,b]=[x,0,c];else[r,g,b]=[c,0,x];return{r:Math.round((r+m)*255),g:Math.round((g+m)*255),b:Math.round((b+m)*255)}}
+const mix=(a,b,t)=>({r:Math.round(a.r+(b.r-a.r)*t),g:Math.round(a.g+(b.g-a.g)*t),b:Math.round(a.b+(b.b-a.b)*t)});const rgb=c=>`rgb(${c.r},${c.g},${c.b})`;
+function lum(c){const a=[c.r,c.g,c.b].map(v=>{const n=v/255;return n<=.03928?n/12.92:Math.pow((n+.055)/1.055,2.4)});return .2126*a[0]+.7152*a[1]+.0722*a[2]}
+function color(seed){const hash=fnv1a(seed),r=mulberry32(hash);return{hash,c:hsl(Math.floor(r()*360),62+Math.floor(r()*25),38+Math.floor(r()*19))}}
+function theme(c){const light=lum(c)>.45;document.body.style.backgroundColor=rgb(c);const root=document.documentElement.style;root.setProperty('--ink',light?'#152019':'#f8fbf9');root.setProperty('--muted',light?'rgba(21,32,25,.58)':'rgba(248,251,249,.65)');root.setProperty('--field',light?'rgba(255,255,255,.47)':'rgba(4,10,8,.25)');root.setProperty('--fieldline',light?'rgba(0,0,0,.12)':'rgba(255,255,255,.22)');root.setProperty('--btn',light?'rgba(20,41,28,.88)':'rgba(255,255,255,.93)');root.setProperty('--btnink',light?'#fff':'#132119')}
+function size(){const d=Math.min(devicePixelRatio||1,2),w=innerWidth,h=innerHeight;canvas.width=Math.ceil(w*d);canvas.height=Math.ceil(h*d);canvas.style.width=w+'px';canvas.style.height=h+'px';ctx.setTransform(d,0,0,d,0,0);return{w,h}}
+function draw(seed){const {hash,c}=color(seed),r=mulberry32(hash^0xA8421D73),{w,h}=size();theme(c);const light=lum(c)>.45,a=light?mix(c,{r:255,g:255,b:255},.42):mix(c,{r:0,g:0,b:0},.72),b=light?mix(c,{r:255,g:255,b:255},.76):mix(c,{r:0,g:0,b:0},.38),star=light?'rgba(10,18,14,.94)':'rgba(255,255,255,.96)',line=light?'rgba(10,18,14,.20)':'rgba(255,255,255,.23)',glow=light?'rgba(10,18,14,.07)':'rgba(255,255,255,.10)';const g=ctx.createRadialGradient(w*.52,h*.46,0,w*.52,h*.46,Math.max(w,h)*.78);g.addColorStop(0,rgb(b));g.addColorStop(1,rgb(a));ctx.fillStyle=g;ctx.fillRect(0,0,w,h);const pts=[],n=Math.max(36,Math.min(90,42+Math.floor(r()*42)));for(let i=0;i<n;i++)pts.push({x:r()*w,y:r()*h,z:.65+r()*3.2});ctx.strokeStyle=line;ctx.lineWidth=1;ctx.beginPath();for(let i=0;i<pts.length;i++){const p=pts[i],near=[];for(let j=0;j<pts.length;j++)if(i!==j)near.push({j,d:Math.hypot(p.x-pts[j].x,p.y-pts[j].y)});near.sort((x,y)=>x.d-y.d);for(let k=0;k<1+Math.floor(r()*2);k++){const q=near[k];if(q&&q.d<Math.min(w,h)*.24&&i<q.j){ctx.moveTo(p.x,p.y);ctx.lineTo(pts[q.j].x,pts[q.j].y)}}}ctx.stroke();for(const p of pts){ctx.beginPath();ctx.fillStyle=glow;ctx.arc(p.x,p.y,p.z*5.4,0,Math.PI*2);ctx.fill();ctx.beginPath();ctx.fillStyle=star;ctx.arc(p.x,p.y,p.z,0,Math.PI*2);ctx.fill()}}
+function access(){return `access:${visitor()}:${Date.now()}`}
+async function update(){const raw=input.value.trim();run.disabled=true;try{let seed=raw;if(!seed){seed=access();status.textContent='constelação deste acesso'}else if(isUrl(seed)){status.textContent='extraindo texto…';try{seed=await pageText(seed);status.textContent='constelação da página'}catch{status.textContent='constelação do link'}}else status.textContent='constelação do texto';currentSeed=seed;draw(seed)}finally{run.disabled=false}}
+run.addEventListener('click',update);input.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key==='Enter')update()});addEventListener('resize',()=>currentSeed&&draw(currentSeed));currentSeed=access();draw(currentSeed);
+</script>
+</body>
+</html>
