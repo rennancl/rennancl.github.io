@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Breakout — Rennan Cordeiro Lima</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/breakout.css">
+</head>
+<body>
+<header class="page-header">
+  <p><a href="../">← Back</a></p>
+  <h1>Breakout</h1>
+  <p class="title">Procedurally generated levels — click, tap, or press Space to launch the ball.</p>
+</header>
+
+<main class="game-main">
+  <div class="game-hud">
+    <span>Score: <strong id="hud-score">0</strong></span>
+    <span>Lives: <strong id="hud-lives">3</strong></span>
+    <span>Phase: <strong id="hud-phase">1</strong></span>
+    <span>Best: <strong id="hud-best">0 (phase 1)</strong></span>
+  </div>
+
+  <div class="game-stage">
+    <canvas id="game-canvas"></canvas>
+    <div id="game-overlay" class="game-overlay" hidden>
+      <h2 id="overlay-title">Game Over</h2>
+      <p id="overlay-message"></p>
+      <button id="overlay-button" type="button">Play Again</button>
+    </div>
+  </div>
+</main>
+
+<script type="module" src="../assets/js/breakout.js"></script>
+</body>
+</html>
