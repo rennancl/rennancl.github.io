@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formater — Rennan Cordeiro Lima</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/formater.css">
+</head>
+<body>
+<header class="page-header">
+  <p><a href="../">← Back</a></p>
+  <h1>Formater</h1>
+  <p class="title">Paste JSON or CSV — it's detected and formatted automatically.</p>
+</header>
+
+<main class="formater-main">
+  <textarea id="formater-input" placeholder="Paste JSON or CSV here…"></textarea>
+
+  <p id="formater-error" class="formater-error" hidden></p>
+
+  <div id="formater-output" class="formater-output" hidden>
+    <div id="formater-tabs" class="formater-tabs" hidden>
+      <button type="button" id="tab-table" class="formater-tab" aria-pressed="true">Table</button>
+      <button type="button" id="tab-aligned" class="formater-tab" aria-pressed="false">Aligned text</button>
+    </div>
+    <button type="button" id="formater-copy" class="btn-copy">Copy</button>
+    <div id="formater-json" class="formater-json" hidden><pre><code id="formater-json-code"></code></pre></div>
+    <div id="formater-table-view" class="formater-table-view" hidden></div>
+    <pre id="formater-aligned-view" class="formater-aligned-view" hidden></pre>
+  </div>
+</main>
+
+<script type="module" src="../assets/js/formater.js"></script>
+</body>
+</html>

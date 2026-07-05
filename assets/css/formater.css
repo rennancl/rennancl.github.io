@@ -1,0 +1,99 @@
+main.formater-main {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#formater-input {
+  width: 100%;
+  min-height: 220px;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+.formater-error {
+  margin-top: 1rem;
+  color: #a33;
+}
+
+.formater-output {
+  margin-top: 1.5rem;
+}
+
+.formater-tabs {
+  display: inline-flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.formater-tab {
+  padding: 0.4rem 0.9rem;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.formater-tab[aria-pressed="true"] {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.btn-copy {
+  display: block;
+  margin: 0 0 1rem auto;
+  padding: 0.45rem 1rem;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--accent);
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.btn-copy:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.formater-json pre,
+.formater-aligned-view {
+  overflow-x: auto;
+  padding: 1rem;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: var(--bg);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.formater-table-view {
+  overflow-x: auto;
+}
+
+.formater-table-view table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.88rem;
+}
+
+.formater-table-view th,
+.formater-table-view td {
+  border: 1px solid var(--rule);
+  padding: 0.4rem 0.6rem;
+  text-align: left;
+}
+
+.formater-table-view th {
+  background: var(--rule);
+  font-weight: 600;
+}
