@@ -38,9 +38,8 @@ a:hover {
 }
 
 main,
-header.page-header,
-footer {
-  max-width: 860px;
+header.page-header {
+  max-width: 960px;
   margin: 0 auto;
 }
 
@@ -146,6 +145,7 @@ footer {
   color: var(--text-secondary);
   font-size: 0.9375rem;
   border-top: 1px solid var(--border);
+  margin: 0 -1.5rem;
 }
 
 .btn-primary {
