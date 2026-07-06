@@ -67,8 +67,8 @@
 }
 
 .hero-photo {
-  width: 460px;
-  height: 460px;
+  width: 400px;
+  height: 400px;
   border-radius: 0;
   object-fit: cover;
   flex-shrink: 0;
@@ -256,4 +256,28 @@
 
 .footer-icons a:hover {
   color: var(--violet-400);
+}
+
+/* Language switcher */
+.lang-switch {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+}
+
+.lang-switch a {
+  color: var(--olive-700);
+}
+
+.lang-switch a:hover {
+  color: var(--violet-400);
+}
+
+.lang-current {
+  color: var(--violet-700);
+  font-weight: 500;
+}
+
+.lang-sep {
+  color: var(--border);
+  margin: 0 0.35rem;
 }
