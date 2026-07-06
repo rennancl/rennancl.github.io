@@ -4,7 +4,6 @@
   top: 0;
   z-index: 10;
   background: var(--bg-light);
-  border-bottom: 1px solid var(--border);
   margin: 0 -1.5rem;
 }
 
