@@ -17,7 +17,7 @@ The site draws from a larger brand palette (Base, Olives, Purples, Neutrals, Red
 
 | Token | Hex | Source | Use |
 |---|---|---|---|
-| `--bg` / `--bg-light` | `#F3F2F3` | White Smoke / Paper | Page background, nav bar, card backgrounds |
+| `--bg` / `--bg-light` | `#FEFEF9` | White Smoke / Paper | Page background, nav bar, card backgrounds |
 | `--text` | `#0F1110` | Onyx | Body copy only — never headings |
 | `--text-secondary` | `#76756D` | Stone | Captions, authors, meta text |
 | `--olive-700` | `#415323` | Olive Leaf / Olive 700 | Links, primary buttons, tags |

@@ -1,7 +1,7 @@
 :root {
   /* Base */
   --olive-leaf: #415323;
-  --white-smoke: #F3F2F3;
+  --white-smoke: #FEFEF9;
   --onyx: #0F1110;
   --midnight-violet: #36263D;
   --vintage-grape: #68546E;
@@ -24,7 +24,7 @@
   --charcoal: #252723;
   --stone: #76756D;
   --ash: #CFCBC3;
-  --paper: #F3F2F3;
+  --paper: #FEFEF9;
 
   /* Reds */
   --oxblood: #5A1F29;
@@ -136,7 +136,7 @@ header.page-header {
 .bio {
   margin: 0 0 1.25rem;
   max-width: 65ch;
-  font-size: 1.375rem;
+  font-size: 1.0625rem;
   line-height: 1.6;
 }
 
