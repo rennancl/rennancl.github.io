@@ -1,13 +1,68 @@
 :root {
-  --bg: #EDEAE4;
-  --bg-light: #F7F5F1;
-  --text: #0F1110;
-  --text-secondary: #5C5A57;
+  /* Base */
+  --olive-leaf: #415323;
+  --white-smoke: #F3F2F3;
+  --onyx: #0F1110;
+  --midnight-violet: #36263D;
+  --vintage-grape: #68546E;
+
+  /* Olives */
+  --olive-900: #253015;
   --olive-700: #415323;
-  --olive-300: #8DA597;
-  --violet-700: #2B2436;
-  --violet-400: #8D5A97;
-  --border: #D8D4CC;
+  --olive-500: #6F7C55;
+  --olive-300: #9FA88D;
+  --olive-100: #D8DDCF;
+
+  /* Purples */
+  --plum-900: #24192A;
+  --plum-700: #36263D;
+  --grape-500: #68546E;
+  --mauve-300: #9B879F;
+  --lilac-100: #D8CFDA;
+
+  /* Neutrals */
+  --charcoal: #252723;
+  --stone: #76756D;
+  --ash: #CFCBC3;
+  --paper: #F3F2F3;
+
+  /* Reds */
+  --oxblood: #5A1F29;
+  --rosewood: #7B3540;
+  --clay-rose: #A5666C;
+  --dusty-rose: #C59699;
+  --pale-blush: #E7D1D1;
+
+  /* Yellows */
+  --umber: #6C531E;
+  --ochre: #96742D;
+  --muted-gold: #B99A54;
+  --straw: #D5C38A;
+  --pale-wheat: #E9DEC0;
+
+  /* Blues */
+  --ink-blue: #1F2E3A;
+  --slate-blue: #34495A;
+  --muted-teal: #4F6A68;
+  --fog-blue: #899FA0;
+  --pale-mist: #CFD9D8;
+
+  /* Functional */
+  --success: #526B39;
+  --warning: #A77D2F;
+  --error: #8A3340;
+  --info: #3D5C68;
+  --focus: #68546E;
+
+  /* Site semantic tokens (consumed throughout style.css / nav.css) */
+  --bg: var(--white-smoke);
+  --bg-light: var(--white-smoke);
+  --text: var(--onyx);
+  --text-secondary: var(--stone);
+  --violet-700: var(--midnight-violet);
+  --violet-400: var(--vintage-grape);
+  --border: var(--ash);
+
   --serif: "Cormorant Garamond", ui-serif, Georgia, serif;
   --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;

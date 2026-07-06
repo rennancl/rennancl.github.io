@@ -13,19 +13,21 @@ They don't compete — olive invites you in, violet marks the more considered mo
 
 ## Color tokens
 
-| Token | Hex | Use |
-|---|---|---|
-| `--bg` | `#EDEAE4` | Page background (Parchment) |
-| `--bg-light` | `#F7F5F1` | Nav bar, card backgrounds (Ivory) |
-| `--text` | `#0F1110` | Body copy only — never headings (Onyx) |
-| `--text-secondary` | `#5C5A57` | Captions, authors, meta text (Warm Gray) |
-| `--olive-700` | `#415323` | Links, primary buttons, tags (Olive Leaf) |
-| `--olive-300` | `#8DA597` | Secondary accents (Olive Mist) |
-| `--violet-700` | `#2B2436` | Headings, hover states, secondary buttons (Midnight Violet) |
-| `--violet-400` | `#8D5A97` | Icon hover, emphasis in running text (Vintage Lavender) |
-| `--border` | `#D8D4CC` | 1px dividers only (Soft Stone) |
+The site draws from a larger brand palette (Base, Olives, Purples, Neutrals, Reds, Yellows, Blues, Functional — see `assets/css/style.css` for the full `:root` token list). Only a handful of semantic roles are actually used on the page today:
+
+| Token | Hex | Source | Use |
+|---|---|---|---|
+| `--bg` / `--bg-light` | `#F3F2F3` | White Smoke / Paper | Page background, nav bar, card backgrounds |
+| `--text` | `#0F1110` | Onyx | Body copy only — never headings |
+| `--text-secondary` | `#76756D` | Stone | Captions, authors, meta text |
+| `--olive-700` | `#415323` | Olive Leaf / Olive 700 | Links, primary buttons, tags |
+| `--violet-700` | `#36263D` | Midnight Violet / Plum 700 | Headings, hover states, secondary buttons |
+| `--violet-400` | `#68546E` | Vintage Grape / Grape 500 | Icon hover, emphasis in running text |
+| `--border` | `#CFCBC3` | Ash | 1px dividers only |
 
 **Rule:** headings are always `--violet-700`, never `--text`. Body copy is always `--text`, never pure black. This is what gives the page depth without adding more colors.
+
+The rest of the brand palette (Reds, Yellows, Blues, Functional colors like `--success`/`--warning`/`--error`) isn't used on the site yet — it's there for future features that need status/alert colors, without inventing new ones ad hoc.
 
 ## Typography
 
