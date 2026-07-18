@@ -19,7 +19,7 @@
 .logomark {
   font-family: var(--mono);
   font-size: 1.1rem;
-  color: var(--violet-700);
+  color: var(--navy-700);
   text-decoration: none;
   font-weight: 400;
 }
@@ -44,14 +44,14 @@
 }
 
 .nav-links a:hover {
-  color: var(--violet-700);
+  color: var(--olive-700);
 }
 
 .nav-dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--violet-400);
+  background: var(--navy-500);
   display: inline-block;
 }
 
@@ -71,6 +71,7 @@
   border-radius: 0;
   object-fit: cover;
   flex-shrink: 0;
+  box-shadow: var(--shadow-md);
 }
 
 .hero-text {
@@ -93,7 +94,7 @@
 }
 
 .contact-links a:hover {
-  color: var(--violet-400);
+  color: var(--olive-900);
 }
 
 @media (max-width: 640px) {
@@ -143,13 +144,12 @@
   flex-shrink: 0;
   width: 44px;
   height: 44px;
-  border: 1px solid var(--border);
   border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--olive-700);
-  background: var(--bg-light);
+  color: var(--stone);
+  background: var(--surface);
 }
 
 .now-date {
@@ -160,10 +160,10 @@
 }
 
 .now-headline {
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: 1.3rem;
-  font-weight: 500;
-  color: var(--violet-700);
+  font-weight: 600;
+  color: var(--navy-700);
   margin: 0 0 0.3rem;
 }
 
@@ -188,10 +188,12 @@
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 1.5rem;
-  padding: 2.5rem 1.5rem;
+  padding: 2rem;
   max-width: 960px;
-  margin: 0 auto;
-  border-top: 1px solid var(--border);
+  margin: 2rem auto 0;
+  background: var(--surface);
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
 }
 
 .cta-left {
@@ -205,7 +207,7 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: var(--violet-700);
+  background: var(--navy-700);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -222,7 +224,8 @@
 }
 
 .cta-text em {
-  color: var(--violet-400);
+  color: var(--navy-700);
+  font-family: var(--serif);
   font-style: italic;
 }
 
@@ -262,7 +265,7 @@
 }
 
 .footer-icons a:hover {
-  color: var(--violet-400);
+  color: var(--olive-900);
 }
 
 /* Language switcher */
@@ -276,11 +279,11 @@
 }
 
 .lang-switch a:hover {
-  color: var(--violet-400);
+  color: var(--olive-900);
 }
 
 .lang-current {
-  color: var(--violet-700);
+  color: var(--navy-700);
   font-weight: 500;
 }
 
