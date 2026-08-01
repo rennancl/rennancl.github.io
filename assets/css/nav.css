@@ -12,10 +12,10 @@
   top: 0;
   z-index: 10;
   margin: 0 -1.5rem;
-  background: rgba(253, 252, 253, 0.78);
+  background: var(--nav-bg);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--mist);
+  border-bottom: 1px solid var(--rule);
 }
 
 .site-nav .nav-inner {
@@ -33,11 +33,11 @@
   font-size: 1.05rem;
   font-weight: 500;
   letter-spacing: 0.02em;
-  color: var(--onyx);
+  color: var(--text);
 }
 
 .logomark:hover {
-  color: var(--blue);
+  color: var(--accent);
   text-decoration: none;
 }
 
@@ -53,11 +53,11 @@
 
 .nav-links a {
   font-size: 0.9375rem;
-  color: var(--onyx);
+  color: var(--text);
 }
 
 .nav-links a:hover {
-  color: var(--blue);
+  color: var(--accent);
 }
 
 /* Genuinely circular — roundness is the shape itself, not a softened corner */
@@ -65,8 +65,64 @@
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--blue);
+  background: var(--accent);
   display: inline-block;
+}
+
+/* ---------- Theme toggle ----------
+   An icon button with no chrome: it shows the theme it switches to. */
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  line-height: 0;
+}
+
+.theme-toggle:hover {
+  color: var(--accent);
+}
+
+.theme-toggle .icon {
+  vertical-align: 0;
+}
+
+.theme-toggle .icon-sun {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-toggle .icon-sun {
+    display: block;
+  }
+
+  :root:not([data-theme="light"]) .theme-toggle .icon-moon {
+    display: none;
+  }
+}
+
+:root[data-theme="dark"] .theme-toggle .icon-sun {
+  display: block;
+}
+
+:root[data-theme="dark"] .theme-toggle .icon-moon {
+  display: none;
+}
+
+:root[data-theme="light"] .theme-toggle .icon-sun {
+  display: none;
+}
+
+:root[data-theme="light"] .theme-toggle .icon-moon {
+  display: block;
 }
 
 /* ---------- Language switcher ---------- */
@@ -79,20 +135,20 @@
 }
 
 .lang-switch a {
-  color: var(--graphite);
+  color: var(--text-muted);
 }
 
 .lang-switch a:hover {
-  color: var(--blue);
+  color: var(--accent);
 }
 
 .lang-current {
-  color: var(--blue);
+  color: var(--accent);
   font-weight: 500;
 }
 
 .lang-sep {
-  color: var(--mist);
+  color: var(--rule);
   margin: 0 0.35rem;
 }
 
@@ -133,7 +189,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  color: var(--blue);
+  color: var(--accent);
   font-size: 0.9375rem;
   font-weight: 500;
 }
@@ -160,12 +216,12 @@
   gap: 0.75rem;
 }
 
-/* Tertiary action: text only, Blue, with a typographic indicator */
+/* Tertiary action: text only, accent, with a typographic indicator */
 .view-all {
   font-size: 0.9375rem;
   font-weight: 500;
   white-space: nowrap;
-  color: var(--blue);
+  color: var(--accent);
 }
 
 .now-list {
@@ -177,7 +233,7 @@
   display: flex;
   gap: 1.5rem;
   padding: 1.75rem 0;
-  border-top: 1px solid var(--mist);
+  border-top: 1px solid var(--rule);
 }
 
 .now-card:first-child {
@@ -193,7 +249,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--graphite);
+  color: var(--text-muted);
   background: var(--surface);
   border: 1px solid var(--border-quiet);
 }
@@ -201,7 +257,7 @@
 /* Mono label mode */
 .now-date {
   font-family: var(--mono);
-  color: var(--graphite);
+  color: var(--text-muted);
   font-size: 0.75rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -212,7 +268,7 @@
   font-family: var(--sans);
   font-size: 1.1875rem;
   font-weight: 600;
-  color: var(--onyx);
+  color: var(--text);
   line-height: 1.3;
   margin: 0 0 0.35rem;
 }
@@ -224,12 +280,12 @@
   font-style: italic;
   letter-spacing: -0.015em;
   line-height: 1.3;
-  color: var(--navy);
+  color: var(--work-title);
   margin: 0 0 0.4rem;
 }
 
 .now-detail {
-  color: var(--graphite);
+  color: var(--text-muted);
   margin: 0;
   font-size: 0.9375rem;
   line-height: 1.5;
@@ -238,7 +294,8 @@
 
 /* ---------- CTA ----------
    A Navy field: a saturated block carrying a statement, not a container
-   of details. Flat, square, generously padded. */
+   of details. Flat, square, generously padded. It stays Navy in both
+   themes — a field is an interruption, not a surface that follows the page. */
 
 .cta {
   display: flex;
@@ -334,7 +391,7 @@
   font-size: 0.75rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--graphite);
+  color: var(--text-muted);
 }
 
 .footer-links {
@@ -351,9 +408,9 @@
 }
 
 .footer-icons a {
-  color: var(--graphite);
+  color: var(--text-muted);
 }
 
 .footer-icons a:hover {
-  color: var(--blue);
+  color: var(--accent);
 }

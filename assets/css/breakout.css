@@ -41,7 +41,7 @@ main.game-main {
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
-  background: rgba(253, 252, 253, 0.92);
+  background: var(--overlay-bg);
   text-align: center;
 }
 
