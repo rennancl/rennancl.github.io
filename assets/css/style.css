@@ -1,67 +1,61 @@
+/* ============================================================
+   Design System — base
+   Serif ideas · Sans explanations · Mono evidence
+   Paper space · Onyx structure · Navy depth · Blue focus
+   Flat surfaces only: no gradients anywhere in this system.
+   ============================================================ */
+
 :root {
-  /* Base */
-  --olive-leaf: #415323;
-  --onyx: #0F1110;
-
-  /* Olives */
-  --olive-900: #253015;
-  --olive-700: #415323;
-  --olive-500: #6F7C55;
-  --olive-300: #9FA88D;
-  --olive-100: #D8DDCF;
-
-  /* Neutrals */
-  --charcoal: #252723;
-  --stone: #76756D;
-  --ash: #CFCBC3;
+  /* Base — the actual identity */
+  --onyx: #101015;
+  --navy: #080880;
+  --blue: #1111DE;
   --paper: #FDFCFD;
-  --surface: #F7F6F7;
-  --surface-muted: #F1F0F1;
 
-  /* Reds */
-  --oxblood: #5A1F29;
-  --rosewood: #7B3540;
-  --clay-rose: #A5666C;
-  --dusty-rose: #C59699;
-  --pale-blush: #E7D1D1;
+  /* Supporting neutrals */
+  --graphite: #2D2D36;
+  --mist: #C9CAD4;
 
-  /* Yellows */
-  --umber: #6C531E;
-  --ochre: #96742D;
-  --muted-gold: #B99A54;
-  --straw: #D5C38A;
-  --pale-wheat: #E9DEC0;
+  /* Blue, adapted to survive a dark background */
+  --periwinkle: #BFC3FF;
 
-  /* Blues */
-  --ink-blue: #1F2E3A;
-  --slate-blue: #34495A;
-  --muted-teal: #4F6A68;
-  --fog-blue: #899FA0;
-  --pale-mist: #CFD9D8;
+  /* Semantic — two levels only */
+  --green-deep: #043C12;
+  --green-signal: #077A10;
+  --yellow-deep: #4D3500;
+  --yellow-signal: #B59A00;
+  --red-deep: #3F000C;
+  --red-signal: #900B10;
 
-  /* Functional */
-  --success: #526B39;
-  --warning: #A77D2F;
-  --error: #8A3340;
-  --info: #3D5C68;
-  --focus: #68546E;
+  /* Elevation — derived from Onyx, never pure black */
+  --shadow-sm: 0 2px 8px rgba(16, 16, 21, 0.06);
+  --shadow-md: 0 8px 24px rgba(16, 16, 21, 0.09);
+  --shadow-lg: 0 20px 50px rgba(16, 16, 21, 0.14);
 
-  /* Site semantic tokens (consumed throughout style.css / nav.css) */
+  /* Voices */
+  --serif: "Source Serif 4", Georgia, serif;
+  --sans: "Source Sans 3", Inter, Helvetica, Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* Hierarchy from opacity over the tokens, not from new colors */
+  --surface: rgba(247, 246, 247, 0.72);
+  --border-quiet: rgba(201, 202, 212, 0.42);
+  --on-dark-secondary: rgba(253, 252, 253, 0.75);
+  --on-dark-rule: rgba(253, 252, 253, 0.28);
+
+  /* Aliases consumed by nav.css / breakout.css */
   --bg: var(--paper);
   --bg-light: var(--paper);
   --text: var(--onyx);
-  --text-secondary: var(--stone);
-  --navy-700: var(--ink-blue);
-  --navy-500: var(--slate-blue);
-  --border: var(--ash);
+  --text-secondary: var(--graphite);
+  --border: var(--mist);
+  --rule: var(--mist);
+  --muted: var(--graphite);
+  --accent: var(--blue);
+}
 
-  --shadow-sm: 0 2px 8px rgba(15, 17, 16, 0.06);
-  --shadow-md: 0 8px 24px rgba(15, 17, 16, 0.08);
-  --shadow-lg: 0 20px 50px rgba(15, 17, 16, 0.12);
-
-  --serif: "Source Serif 4", ui-serif, Georgia, serif;
-  --sans: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+* {
+  box-sizing: border-box;
 }
 
 html {
@@ -69,23 +63,15 @@ html {
 }
 
 body {
-  background: var(--bg);
-  color: var(--text);
+  /* Flat Paper — the ambient wash is deliberately omitted (no gradients) */
+  background: var(--paper);
+  color: var(--onyx);
   font-family: var(--sans);
   font-weight: 400;
   line-height: 1.6;
   margin: 0;
   padding: 0 1.5rem;
-}
-
-a {
-  color: var(--olive-700);
-  text-decoration: none;
-}
-
-a:hover {
-  color: var(--olive-900);
-  text-decoration: underline;
+  -webkit-font-smoothing: antialiased;
 }
 
 main,
@@ -94,147 +80,198 @@ header.page-header {
   margin: 0 auto;
 }
 
+/* ---------- Links ---------- */
+
+a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+}
+
+/* ---------- Serif: the idea ----------
+   Weight 500, tight tracking, sub-1 leading.
+   Display type earns presence through size and space, never boldness. */
+
 h1,
 h2,
 h3 {
-  font-family: var(--sans);
-  color: var(--navy-700);
-  line-height: 1.2;
+  font-family: var(--serif);
+  color: var(--onyx);
+  font-weight: 500;
   margin: 0;
 }
 
 h1 {
-  font-size: clamp(2.25rem, 4vw + 1rem, 4.5rem);
-  font-weight: 300;
+  font-size: clamp(2.75rem, 6vw, 5rem);
+  letter-spacing: -0.045em;
+  line-height: 0.96;
 }
 
 h2 {
-  font-size: clamp(1.75rem, 2.5vw + 1rem, 3rem);
-  font-weight: 600;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  letter-spacing: -0.04em;
+  line-height: 0.98;
 }
 
 h3 {
-  font-size: clamp(1.25rem, 1.5vw + 1rem, 2rem);
-  font-weight: 500;
+  font-size: 1.5rem;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
 }
 
-header.page-header {
-  padding: 2rem 0 3rem;
-}
+/* ---------- Kicker ----------
+   A short mono label naming the territory above a serif heading. */
 
+.kicker,
 .title {
-  color: var(--olive-700);
-  font-family: var(--sans);
+  font-family: var(--mono);
+  font-size: 0.8125rem;
   font-weight: 500;
-  margin: 0.4rem 0 1rem;
-  font-size: 1.125rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue);
+  line-height: 1.4;
+  margin: 0 0 1rem;
 }
+
+/* ---------- Sans: the explanation ---------- */
 
 .bio {
-  margin: 0 0 1.25rem;
-  max-width: 65ch;
+  margin: 1.25rem 0 0;
+  max-width: 62ch;
   font-size: 1.0625rem;
   line-height: 1.6;
 }
 
-.links .sep {
-  color: var(--border);
-  margin: 0 0.6rem;
+/* ---------- Structure ---------- */
+
+header.page-header {
+  padding: 3.5rem 0 3rem;
+}
+
+header.page-header p {
+  margin: 0 0 1.5rem;
 }
 
 section {
-  padding: 3rem 1.5rem;
-  border-top: 1px solid var(--border);
+  padding: 4rem 0;
+  border-top: 1px solid var(--mist);
 }
 
 section h2 {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
+/* One Onyx rule closing a section header — the strongest rule on the page */
 .section-rule {
-  width: 48px;
-  height: 3px;
-  background: var(--olive-700);
-  border: none;
-  margin: 0 0 2rem;
+  width: 100%;
+  height: 0;
+  background: none;
+  border: 0;
+  border-top: 1px solid var(--onyx);
+  margin: 1.25rem 0 0;
 }
+
+/* ---------- Entries (details page) ---------- */
 
 .entry {
-  margin-bottom: 1.5rem;
+  padding: 1.75rem 0;
+  border-top: 1px solid var(--mist);
 }
 
-.entry:last-child {
-  margin-bottom: 0;
+.entry:first-of-type {
+  border-top: none;
 }
 
 .entry-title {
+  font-family: var(--sans);
   font-weight: 600;
+  font-size: 1.125rem;
   margin: 0;
-  color: var(--text);
+  color: var(--onyx);
 }
 
+/* Mono label mode: uppercase, open tracking */
 .entry-meta {
   font-family: var(--mono);
-  color: var(--text-secondary);
-  font-size: 0.875rem;
-  margin: 0.15rem 0 0.4rem;
+  color: var(--graphite);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0.4rem 0 0.6rem;
 }
 
 .entry-desc {
   margin: 0;
-  color: var(--text);
+  max-width: 68ch;
+  color: var(--onyx);
 }
 
 .skills-line {
-  margin: 0 0 0.6rem;
+  margin: 0 0 0.75rem;
+  max-width: 68ch;
 }
 
 .skills-line .label {
-  color: var(--text-secondary);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--graphite);
+  margin-right: 0.5rem;
 }
 
-footer {
-  color: var(--text-secondary);
-  font-size: 0.9375rem;
-  border-top: 1px solid var(--border);
-  margin: 0 -1.5rem;
-}
+/* ---------- Buttons ----------
+   Square. Blue is the natural primary because it is the focus color. */
 
 .btn-primary {
   display: inline-block;
-  padding: 0.7rem 1.4rem;
-  border-radius: 4px;
-  background: var(--olive-700);
-  color: var(--bg);
+  padding: 0.8rem 1.5rem;
+  border: 1px solid var(--blue);
+  border-radius: 0;
+  background: var(--blue);
+  color: var(--paper);
   font-family: var(--sans);
   font-weight: 500;
-  text-decoration: none;
   white-space: nowrap;
 }
 
 .btn-primary:hover {
-  background: var(--olive-900);
-  color: var(--bg);
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--paper);
   text-decoration: none;
 }
 
 .btn-secondary {
   display: inline-block;
-  padding: 0.7rem 1.4rem;
-  border-radius: 4px;
+  padding: 0.8rem 1.5rem;
+  border: 1px solid var(--mist);
+  border-radius: 0;
   background: transparent;
-  border: 1px solid var(--navy-700);
-  color: var(--navy-700);
+  color: var(--onyx);
   font-family: var(--sans);
   font-weight: 500;
-  text-decoration: none;
 }
 
 .btn-secondary:hover {
-  background: var(--navy-700);
-  color: var(--bg);
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--paper);
   text-decoration: none;
 }
+
+/* ---------- Icons ----------
+   Subordinate to typography. */
 
 .icon {
   width: 20px;
@@ -247,8 +284,21 @@ footer {
   vertical-align: -4px;
 }
 
+/* ---------- Footer ---------- */
+
+footer {
+  color: var(--graphite);
+  font-size: 0.9375rem;
+  border-top: 1px solid var(--mist);
+  margin: 0 -1.5rem;
+}
+
 @media (max-width: 600px) {
-  h1 {
-    font-size: 2rem;
+  body {
+    padding: 0 1.25rem;
+  }
+
+  section {
+    padding: 3rem 0;
   }
 }

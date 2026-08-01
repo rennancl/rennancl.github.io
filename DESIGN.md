@@ -1,396 +1,341 @@
 # Design System
 
-The system combines **editorial clarity, scientific precision, and visual curiosity**. It should feel thoughtful and sophisticated without becoming ornamental; technical without becoming cold.
+An **editorial, scientific, technical, tactile** visual language — intellectual and confident without being ornamental.
 
-## Design Principles
+It relies on strong typography, generous negative space, physical depth, isolated photographic objects, precise technical annotation, and restrained color.
 
-The visual system is guided by:
+**Principles** — Curiosity (invite exploration) · Depth (reveal structure) · Intentionality (every decision has a reason) · Elegance (distinction through restraint) · Clarity · Simplicity · Precision.
 
-**Curiosity** — invite exploration and discovery.
-**Depth** — reveal layers, connections, and underlying structure.
-**Intentionality** — every visual decision has a purpose.
-**Elegance** — achieve distinction through restraint.
-**Clarity** — make complex ideas understandable.
-**Simplicity** — remove what does not contribute.
-**Precision** — communicate and execute with rigor.
-
-The overall visual language should feel **contemporary, intellectual, confident, and understated**.
+> **The page is a workspace. Ideas are organized on it, evidence is measured on it, objects are placed upon it for examination.**
 
 ---
 
-# Why Olive + Navy
+## Tokens
 
-The identity uses two primary chromatic voices, each with a distinct conceptual role.
-
-### Olive — Exploration
-
-Olive represents **curiosity, exploration, movement, and discovery**.
-
-It is the active color of the system: links, actions, paths, tags, exploratory diagrams, interactive elements, and points of interest.
-
-> Olive represents what is being explored.
-
-### Navy — Knowledge
-
-Navy represents **knowledge, depth, synthesis, confidence, and intellectual structure**.
-
-It anchors the system and is used for headings, major surfaces, section transitions, research-oriented content, and moments of consolidated understanding.
-
-> Navy represents what has been understood.
-
-Together, they form the conceptual movement of the identity:
-
-**Olive / Exploration → Navy / Understanding**
-
-They should not compete. Olive attracts attention and suggests movement; Navy provides depth and resolution.
-
----
-
-# Color Tokens
-
-The base palette consists of five colors:
-
-| Token         | Hex       | Meaning     | Primary use                          |
-| ------------- | --------- | ----------- | ------------------------------------ |
-| `--olive-700` | `#415323` | Exploration | Actions, links, paths, active states |
-| `--paper`     | `#FDFCFD` | Clarity     | Main background, negative space      |
-| `--onyx`      | `#0F1110` | Structure   | Body text, maximum contrast          |
-| `--navy-700`  | `#1F2E3A` | Knowledge   | Headings, dark surfaces, synthesis   |
-| `--stone`     | `#76756D` | Context     | Secondary information, metadata      |
-
-The supporting neutral system should be recalibrated around the new `#FDFCFD` Paper:
-
-`--paper: #FDFCFD`
-`--surface: #F7F6F7`
-`--surface-muted: #F1F0F1`
-`--ash: #CFCBC3`
-`--stone: #76756D`
-`--charcoal: #252723`
-`--onyx: #0F1110`
-
-The distinction between `Paper`, `Surface`, and `Surface Muted` should be subtle. Cards should feel like layers of paper rather than colored boxes.
-
----
-
-# Color Language
-
-Colors have semantic meaning and should remain consistent.
-
-**Olive** — exploration, curiosity, action, direction.
-**Navy** — knowledge, synthesis, authority, understanding.
-**Onyx** — structure, rigor, primary information.
-**Stone** — context, secondary information, support.
-**Paper** — clarity, space, simplicity.
-**Gold** — insight, discovery, exceptional emphasis.
-**Oxblood / Rosewood** — criticism, limitations, risk.
-**Blue-gray** — information and analytical context.
-
-Gold and red tones should be used sparingly. They are semantic accents, not additional brand colors.
-
----
-
-# Typography
-
-Three families, with clearly defined voices.
-
-## Source Sans 3 — Primary Voice
-
-Used for the vast majority of the identity:
-
-* headings;
-* body copy;
-* navigation;
-* buttons;
-* labels;
-* cards;
-* UI;
-* diagrams;
-* presentations.
-
-Source Sans 3 represents **clarity, modernity, and structure**.
-
-Weight creates hierarchy rather than switching typefaces unnecessarily.
-
-**Light 300** — large editorial titles and expressive statements.
-**Regular 400** — body copy and explanations.
-**Medium 500** — emphasis and interactive elements.
-**Semibold 600** — structural headings and navigation.
-**Bold 700** — exceptional emphasis and major results.
-
-Avoid excessive Bold. The default expression of the identity should feel controlled rather than loud.
-
----
-
-## IBM Plex Mono — Technical Voice
-
-Used for:
-
-* code;
-* numbers and metrics;
-* dates;
-* tags;
-* experimental parameters;
-* datasets;
-* metadata;
-* slide numbers;
-* the logomark;
-* technical annotations.
-
-IBM Plex Mono represents **precision, evidence, method, and engineering**.
-
-Use primarily at weight 400 or 500.
-
-Examples:
-
-`EXPERIMENT / 04`
-
-`N = 12,840`
-
-`+18.4%`
-
-`[ _ >]`
-
-It should appear as a technical annotation layer over the primary visual language, not replace Source Sans 3 for normal text.
-
----
-
-## Source Serif 4 — Reflective Voice
-
-Used selectively for:
-
-* quotations;
-* questions;
-* insights;
-* manifestos;
-* editorial statements;
-* special printed materials;
-* moments of reflection.
-
-Source Serif 4 represents **depth, contemplation, and intellectual expression**.
-
-It should be rare enough that its appearance signals a change in tone.
-
-For example:
-
-> *What happens when information becomes understanding?*
-
-The rule is:
-
-> **Source Sans 3 communicates.**
-> **IBM Plex Mono measures.**
-> **Source Serif 4 reflects.**
-
-Approximately **80% Source Sans 3 / 10% IBM Plex Mono / 10% Source Serif 4** is a useful starting point, not a rigid quota.
-
----
-
-# Graphic Language
-
-The graphic system combines **flat editorial structure with selective physical depth**.
-
-The interface should not look entirely flat, nor should every element float.
-
-Depth must communicate hierarchy.
-
-## Cards
-
-Cards use subtle gray surfaces derived from Paper.
-
-Default:
-
-`background: #F7F6F7`
-
-Alternative:
-
-`background: #F1F0F1`
-
-Cards should use generous padding and restrained corner radii.
-
-Avoid excessive borders. Prefer separation through:
-
-* surface contrast;
-* spacing;
-* subtle shadow;
-* alignment.
-
-Cards should feel like **editorial objects placed on a surface**, not generic SaaS components.
-
----
-
-# Drop Shadows
-
-Shadows introduce physical hierarchy and help selected elements appear as objects.
-
-Use them selectively for:
-
-* featured cards;
-* floating visual objects;
-* image cutouts;
-* interactive elements;
-* overlays.
-
-Avoid applying shadows to every card.
-
-A recommended language:
+Nothing outside this set should appear as a raw value in a stylesheet.
 
 ```css
---shadow-sm:
-  0 2px 8px rgba(15, 17, 16, 0.06);
+:root {
+  /* Base — the actual identity */
+  --onyx:       #101015;  /* structure */
+  --navy:       #080880;  /* depth     */
+  --blue:       #1111DE;  /* focus     */
+  --paper:      #FDFCFD;  /* space     */
 
---shadow-md:
-  0 8px 24px rgba(15, 17, 16, 0.08);
+  /* Supporting neutrals */
+  --graphite:   #2D2D36;  /* secondary dark surfaces and text */
+  --mist:       #C9CAD4;  /* dividers, metadata               */
 
---shadow-lg:
-  0 20px 50px rgba(15, 17, 16, 0.12);
+  /* Blue, adapted to survive a dark background */
+  --periwinkle: #BFC3FF;
+
+  /* Semantic — two levels only, Deep for surfaces, Signal for communication */
+  --green-deep:    #043C12;   --green-signal:  #077A10;
+  --yellow-deep:   #4D3500;   --yellow-signal: #B59A00;
+  --red-deep:      #3F000C;   --red-signal:    #900B10;
+
+  /* Elevation — derived from Onyx, never pure black */
+  --shadow-sm: 0 2px 8px   rgba(16, 16, 21, .06);
+  --shadow-md: 0 8px 24px  rgba(16, 16, 21, .09);
+  --shadow-lg: 0 20px 50px rgba(16, 16, 21, .14);
+
+  /* Voices */
+  --serif: "Source Serif 4", Georgia, serif;
+  --sans:  "Source Sans 3", Inter, Helvetica, Arial, sans-serif;
+  --mono:  "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
 ```
 
-Shadows should be **soft, neutral, and diffuse**.
+Weights: Source Serif 4 `300–700` (optical sizing `8..60`) · Source Sans 3 `300–700` · IBM Plex Mono `400/500/600`.
 
-Never use strong black shadows.
-
----
-
-# Image Cutouts
-
-Photography and imagery may appear as **isolated silhouettes**, removed from their original backgrounds.
-
-Instead of:
-
-> rectangular photograph inside a card
-
-prefer:
-
-> object extracted from the photograph and placed directly within the composition.
-
-Examples include:
-
-* objects;
-* scientific instruments;
-* plants;
-* books;
-* devices;
-* artifacts;
-* architectural elements.
-
-Cutouts can overlap:
-
-* cards;
-* grid boundaries;
-* typography;
-* colored surfaces.
-
-This introduces **curiosity and controlled visual disruption**.
-
-A subtle drop shadow can give the cutout physical presence.
-
-The image should feel like an **object being examined**, rather than decorative photography.
+Further hierarchy comes from **opacity over these tokens**, not new color values — e.g. `rgba(253,252,253,.75)` for secondary text on dark, `rgba(201,202,212,.42)` for quiet borders on light. Avoid families of near-identical grays.
 
 ---
 
-# Layering
+## Color
 
-The system works with three visual depths:
+| Color      | Meaning                                | Use for                                                                     |
+| ---------- | -------------------------------------- | --------------------------------------------------------------------------- |
+| **Onyx**   | rigor, structure, information          | body text, typographic contrast, dark surfaces, diagrams. Prefer to pure black |
+| **Navy**   | knowledge, depth, synthesis, authority | major sections, large dark surfaces, important headings, section transitions |
+| **Blue**   | attention, interaction, discovery      | links, active states, selected data, paths, CTAs, key words, interruptions   |
+| **Paper**  | clarity, openness, editorial space     | the dominant surface — prefer empty space over additional elements           |
 
-### Background
+These four account for the overwhelming majority of every composition, in the hierarchy **Paper + Onyx → Navy → Blue → semantic**. Most work should feel complete with the base palette alone. Blue is the most active color and should occupy less area than Navy or Paper.
 
-Paper.
+**On dark surfaces**, Blue is nearly unreadable and is replaced by `Periwinkle` — kickers, mono annotations, active indicators, links. It is not a fifth brand color; it is Blue adapted to survive a dark background.
 
-Flat, quiet, spacious.
+### Semantic layer
 
-### Information
+Green, Yellow, and Red communicate **meaning, not identity**. Each has exactly two levels: `Deep` for large surfaces, `Signal` for immediate communication.
 
-Gray cards, typography, diagrams.
+| Color      | Meaning                                              |
+| ---------- | ---------------------------------------------------- |
+| **Green**  | success, validation, completion, improvement         |
+| **Yellow** | attention, caution, anomaly, unresolved information  |
+| **Red**    | error, risk, failure, contradiction, limitation      |
 
-Structured and organized.
+They must never compete with Blue as brand colors, and should carry real meaning rather than add variety. A composition holding many colors at once is exceptional, not normal.
 
-### Objects
-
-Cutout images, featured cards, selected data points.
-
-Allowed to float using subtle shadows.
-
-This creates a visual metaphor:
-
-> **The page is a workspace. Information is organized on it. Objects are placed upon it for examination.**
-
-Isso, para mim, é uma direção particularmente forte para a sua identidade.
-
----
-
-# Structural Elements
-
-Use:
-
-* thin 1px dividers;
-* asymmetric editorial grids;
-* generous negative space;
-* gray cards;
-* vertical rules;
-* small mono labels;
-* oversized typography;
-* cropped elements;
-* subtle overlaps;
-* occasional floating cutouts.
-
-Avoid:
-
-* excessive rounded rectangles;
-* gradients as decoration;
-* glassmorphism;
-* excessive pills;
-* icon-heavy interfaces;
-* strong shadows;
-* decorative blobs;
-* generic abstract 3D shapes.
+> **Base colors create the identity. Semantic colors communicate states.**
 
 ---
 
-# Buttons
+## Typography
 
-**Primary**
+Three voices, separated by **function**:
 
-Olive background with Paper text.
+| Voice             | Role                | Use for                                                                       |
+| ----------------- | ------------------- | ----------------------------------------------------------------------------- |
+| **Source Serif 4** | expresses the idea | titles, section headings, key concepts, editorial statements, questions, quotes |
+| **Source Sans 3**  | explains the idea  | body copy, descriptions, navigation, labels, buttons, captions, UI             |
+| **IBM Plex Mono**  | measures the idea  | code, values, metrics, dates, parameters, table data, metadata, identifiers    |
 
-Hover moves toward a darker Olive rather than changing to Navy.
+A typical composition contains all three:
 
-**Secondary**
+**Representation Through Sequence** (serif)
+We investigate how information changes as contextual constraints are introduced. (sans)
+`N = 18,420 · CONTEXT = 16K · Δ +12.8%` (mono)
 
-Navy text with subtle Navy border.
+### Metrics
 
-Hover uses Navy background with Paper text.
+Much of the character comes from **how type is set**, not only which typeface.
 
-**Tertiary**
+**Serif display** — weight `500`, *not* `700`; tracking `-0.045em` at display sizes, `-0.025em` at smaller headings; line-height `0.96`. Display type earns presence through size and space, never boldness. At weight 700 a title looks like an advertisement.
 
-Text only, usually Olive, accompanied by an arrow or typographic symbol.
+**Sans** — normal tracking; line-height `1.2` at large sizes, `1.35` for small text. Secondary text uses `Graphite`, not a lighter weight.
 
-This keeps Olive as **action** and Navy as **structure**, preserving the semantic distinction between the two.
+**Mono, two modes** — *values* are tight and normal-case (`-0.015em`): `N = 12,840 · Δ +18.4%`. *Labels* are uppercase and open (`0.06em`–`0.08em`): `EXPERIMENT / 04`. The first measures, the second annotates.
+
+**Scale** — only the editorial voice scales; body and technical text stay fixed.
+
+```css
+h1 { font-size: clamp(70px, 9vw, 136px); }
+h2 { font-size: clamp(48px, 6vw, 86px); }
+```
+
+Sans weights: `400` normal · `500` emphasis and UI · `600` section labels · `700` sparingly. Never depend on weight for hierarchy — size, spacing, and position do the work.
+
+### Kicker
+
+A short mono label above a serif heading, naming the territory without adding a second headline. `Periwinkle` on dark surfaces.
+
+```css
+font-family: var(--mono);
+font-size: 13px;
+letter-spacing: 0.08em;
+text-transform: uppercase;
+color: var(--blue);
+```
 
 ---
 
-# Icons
+## Depth and Surfaces
 
-Hand-drawn inline SVGs remain appropriate.
+### Geometry
 
-Use:
+The system is **square** — cards, fields, buttons, tables, images and surfaces all use `0` radius. The only rounded forms are genuinely circular objects such as status dots. Rounded rectangles read as generic product UI; sharp corners read as print.
 
-* `24 × 24` viewBox;
-* `stroke="currentColor"`;
-* `stroke-width: 1.5`;
-* `fill: none`;
-* rounded caps and joins.
+### Gradients
 
-Default: Onyx or Stone.
+Never decorative, never glossy or three-dimensional. Exactly three are permitted, all sharing a `135deg` axis so the light direction stays consistent.
 
-Interactive: Olive.
+**01 — Ambient wash.** Paper is rarely dead white; a faint atmosphere suggests light falling across the page. If it reads as "a gradient", it is too strong.
 
-Avoid making Navy the default icon color; Navy should retain greater visual weight.
+```css
+background:
+  radial-gradient(circle at 75% 15%, rgba(17, 17, 222, .10), transparent 28%),
+  radial-gradient(circle at 12% 82%, rgba(8, 8, 128, .09), transparent 30%),
+  var(--paper);
+```
+
+**02 — Dark surfaces.** Never flat Onyx; the move into Navy reads as depth rather than a black box, and the Blue glow keeps the section from feeling inert.
+
+```css
+background:
+  radial-gradient(circle at 80% 25%, rgba(17, 17, 222, .35), transparent 28%),
+  linear-gradient(135deg, var(--onyx), var(--navy));
+```
+
+**03 — Semantic fields.** `Deep → Signal`, giving the two-step families a large-surface form without inventing intermediate tints.
+
+```css
+background: linear-gradient(135deg, var(--green-deep), var(--green-signal));
+```
+
+### Translucency
+
+Glassmorphism is rejected as a style. Blur is permitted only for **chrome floating above content** — navigation, controls, viewport-anchored overlays. Content itself is never placed on frosted glass. Blur signals *this is above the page*, not *this is pretty*.
+
+```css
+background: rgba(253, 252, 253, .78);
+backdrop-filter: blur(12px);
+border: 1px solid rgba(201, 202, 212, .72);
+```
+
+### Shadows
+
+Soft and diffuse, derived from Onyx rather than black. Used for cards, floating objects, cutouts, overlays, and elements breaking the grid. Avoid dramatic elevation.
+
+**Rectangles** (cards, fields, chrome) use `box-shadow` with the tokens. **Cutout objects** use `filter: drop-shadow()` so the shadow follows the contour rather than the bounding box — using `box-shadow` on a cutout draws a visible rectangle around a silhouette and breaks the metaphor.
+
+```css
+filter: drop-shadow(0 32px 45px rgba(16, 16, 21, .26));
+```
+
+Object shadows are larger, lower, and more diffuse than card shadows: a card sits on the page, an object has been placed on it.
+
+> **Shadows indicate hierarchy, not decoration.**
 
 ---
 
-# Dividers
+## Composition
 
-`1px solid var(--ash)`
+Three depths: **01 Surface** (usually Paper — quiet, open, flat) · **02 Information** (typography, grids, tables, diagrams, rules) · **03 Objects** (silhouettes, featured results, focal cards — these float, overlap, cast shadows, and may escape the grid).
 
-Dividers are structural, never decorative.
+Compositions are built **header → body → footer**: a kicker and serif heading above, mono metadata below, the weight in the middle.
 
-For major section transitions, a Navy surface or strong whitespace break is preferable to a thicker divider.
+**Deliberate asymmetry** — two-column splits sit slightly off balance. The difference is small enough never to read as a mistake, large enough that the layout never feels like a default. An exact `1fr 1fr` reads as a template. Three-column groups are the exception and do sit even, since their rhythm comes from the cards.
+
+```css
+grid-template-columns: .92fr 1.08fr;   /* argument | evidence */
+grid-template-columns: 1.02fr .98fr;   /* statement | object  */
+```
+
+**Space** — generous outer padding is part of the identity, not margin to reclaim. Content should end well before the edge. When a composition feels weak, the answer is almost always more space and fewer elements, not another accent color.
+
+---
+
+## Components
+
+### Cards
+
+Use only when grouping genuinely improves understanding — prefer open layouts, whitespace, alignment, dividers, and typographic hierarchy over turning everything into a container. Three tiers:
+
+```css
+/* Default — a barely-there surface lifted off Paper */
+background: rgba(247, 246, 247, .72);
+border: 1px solid rgba(201, 202, 212, .42);
+box-shadow: var(--shadow-sm);
+
+/* Feature — promoted by light and elevation, not color: brighter, not darker */
+background: var(--paper);
+box-shadow: var(--shadow-md);
+
+/* Dark — a single point of contrast, at most one per row */
+background: var(--onyx);
+color: var(--paper);
+border: 0;
+box-shadow: var(--shadow-lg);
+```
+
+Inside a dark card, dividers become `rgba(253, 252, 253, .28)` rather than Mist. Blue is rarely used for large card backgrounds — its saturation gives it far too much prominence.
+
+### Fields
+
+A saturated block carrying a statement, not a container of details — an interruption rather than a neutral surface. Generous padding, short large type. A field holding a paragraph of small text is a card that was colored in by mistake. Fields are a natural surface for a cutout to overlap.
+
+```css
+background: var(--navy);  /* or var(--blue) */
+color: var(--paper);
+padding: 50px;
+box-shadow: var(--shadow-lg);
+```
+
+**Navy** can be used freely for section weight. **Blue** should appear roughly once per composition.
+
+### Badges
+
+Small mono markers labelling an object or state — `13px`, Paper on Blue, `8px 10px` padding. On a colored field they become `rgba(253, 252, 253, .18)`. Badges are labels, not buttons, and never form rows of decorative pills.
+
+### Featured values
+
+One important number may be set far larger than everything around it — mono, `~70px`, line-height `.95`, tracking `-.05em`, in Blue. It stays in mono because it remains evidence; it does not become a serif headline just because it grew. One per composition — a grid of six giant numbers is a dashboard, not an argument.
+
+### Buttons
+
+**Primary** — Blue background, Paper text. **Secondary** — Onyx or Navy text with a restrained border, optionally inverting to Navy on hover. **Tertiary** — text only, usually Blue with a typographic indicator (`→` `↗` `+`). Avoid button chrome.
+
+### Borders and dividers
+
+`1px solid var(--mist)`. For major transitions prefer whitespace, a change in scale, a Navy section, or a typographic break over thicker rules.
+
+### Tables
+
+Sans for descriptive row labels; mono for numbers, percentages, conditions, codes, dates, and model names treated as identifiers. Never box every cell. One `Onyx` rule under the header, `Mist` between rows, no vertical rules at all. Numeric columns are right-aligned so digits stack.
+
+```css
+th { font-family: var(--mono); font-size: 13px; text-transform: uppercase;
+     letter-spacing: .06em; color: var(--graphite); text-align: left;
+     border-bottom: 1px solid var(--onyx); }
+td { border-bottom: 1px solid var(--mist); }
+```
+
+| MODEL    | CONTEXT | ROUGE-1 |        Δ |
+| -------- | ------: | ------: | -------: |
+| Baseline |    `4K` | `0.418` |      `—` |
+| Proposed |   `16K` | `0.512` | `+22.5%` |
+
+The impression should be a **research artifact**, not a spreadsheet application.
+
+### Diagrams
+
+Colors come from the base palette: `Onyx` structure and labels · `Navy` established structure · `Blue` active path · `Paper` negative space. Introduce `Green/Yellow/Red Signal` only when the semantic meaning is genuinely needed.
+
+A node is a small floating surface, not an outlined box — serif for the concept (`Surface`), mono for the identifier (`01 / PAPER`). Connectors are plain `2px` lines, not ornamental arrows. Nodes cast shadows and may sit at slight angles; connectors stay straight.
+
+```css
+background: var(--paper);
+border: 1px solid rgba(201, 202, 212, .7);
+box-shadow: var(--shadow-md);
+```
+
+The result should look like objects arranged and linked on a surface, not a flowchart from a diagramming tool.
+
+### Icons
+
+Simple and subordinate to typography. `Onyx` default, `Graphite` secondary, `Blue` interactive; semantic colors only when communicating those states.
+
+```text
+24 × 24 viewBox · stroke="currentColor" · stroke-width="1.5"
+fill="none" · stroke-linecap="round" · stroke-linejoin="round"
+```
+
+---
+
+## Objects and Imagery
+
+Images should feel like **objects under examination**, not decorative photography:
+
+**object → cutout → shadow → composition**, never **photo → rounded rectangle → card**.
+
+Preserve the natural silhouette of the subject and let its own contour define the image. Suitable subjects: plants, leaves, instruments, books, artifacts, computers, components, architecture, prototypes, documents — anything directly related to the subject discussed. Background removal need not be artificially perfect when the natural contour contributes character.
+
+Silhouettes may overlap typography, cards, diagrams, grid boundaries, fields, and margins, creating controlled irregularity within a rigorous system.
+
+**Rotation** — objects are almost never perfectly upright. A `3°`–`9°` tilt separates *an object resting on a surface* from *an image pasted into a slot*. Beyond ~`10°` it reads as playful. The grid stays rigorous; the objects placed on it do not.
+
+---
+
+## Applying the System
+
+Work in this order:
+
+**1. Typography** — the idea should be understandable through hierarchy alone.
+**2. Space** — give the composition room.
+**3. Base palette** — establish identity with Paper, Onyx, Navy, Blue.
+**4. Structure** — grids, rules, tables, alignment.
+**5. Depth** — shadows and layering where useful.
+**6. Objects** — silhouettes and cutouts as focal elements.
+**7. Semantic color** — only when meaning requires it.
+
+**Avoid:** unnecessary containers · rounded corners on surfaces · gradients as decoration rather than atmosphere, depth, or semantic surface · frosted glass anywhere but floating chrome · excessive pills · icon-heavy interfaces · illustration without semantic purpose · generic 3D blobs · collections of unrelated accent colors.
+
+---
+
+> **Serif ideas. Sans explanations. Mono evidence.**
+> **Paper space. Onyx structure. Navy depth. Blue focus.**
+> **Semantic color only when it means something.**
+> **Shadows and silhouettes to give ideas physical presence.**
+
+This keeps the **`#101015 / #080880 / #1111DE / #FDFCFD` quartet unmistakably the brand**, rather than letting secondary colors dilute it.

@@ -1,10 +1,21 @@
-/* Nav */
+/* ============================================================
+   Design System — components
+   Flat surfaces only: no gradients anywhere in this system.
+   ============================================================ */
+
+/* ---------- Nav ----------
+   Floating chrome anchored to the viewport — the one place blur is
+   permitted, because it signals "above the page", not decoration. */
+
 .site-nav {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: var(--bg-light);
   margin: 0 -1.5rem;
+  background: rgba(253, 252, 253, 0.78);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--mist);
 }
 
 .site-nav .nav-inner {
@@ -14,18 +25,19 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1rem;
 }
 
 .logomark {
   font-family: var(--mono);
-  font-size: 1.1rem;
-  color: var(--navy-700);
-  text-decoration: none;
-  font-weight: 400;
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--onyx);
 }
 
 .logomark:hover {
-  color: var(--olive-700);
+  color: var(--blue);
   text-decoration: none;
 }
 
@@ -36,41 +48,73 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  flex-wrap: wrap;
 }
 
 .nav-links a {
-  font-size: 0.95rem;
-  color: var(--text);
+  font-size: 0.9375rem;
+  color: var(--onyx);
 }
 
 .nav-links a:hover {
-  color: var(--olive-700);
+  color: var(--blue);
 }
 
+/* Genuinely circular — roundness is the shape itself, not a softened corner */
 .nav-dot {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
-  background: var(--navy-500);
+  background: var(--blue);
   display: inline-block;
 }
 
-/* Hero */
+/* ---------- Language switcher ---------- */
+
+.lang-switch {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.lang-switch a {
+  color: var(--graphite);
+}
+
+.lang-switch a:hover {
+  color: var(--blue);
+}
+
+.lang-current {
+  color: var(--blue);
+  font-weight: 500;
+}
+
+.lang-sep {
+  color: var(--mist);
+  margin: 0 0.35rem;
+}
+
+/* ---------- Hero ----------
+   Deliberate asymmetry: never an exact 1fr 1fr. */
+
 .hero {
-  display: flex;
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
   align-items: center;
-  gap: 2.5rem;
-  padding: 3.5rem 1.5rem 3rem;
+  gap: 3.5rem;
+  padding: 5rem 0 4.5rem;
   max-width: 960px;
   margin: 0 auto;
 }
 
+/* An object placed on the page: square, shadowed, no frame */
 .hero-photo {
-  width: 400px;
-  height: 400px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
   border-radius: 0;
   object-fit: cover;
-  flex-shrink: 0;
   box-shadow: var(--shadow-md);
 }
 
@@ -81,58 +125,59 @@
 .contact-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.25rem;
-  margin-top: 1.5rem;
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
 
 .contact-links a {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  color: var(--olive-700);
-  font-size: 0.95rem;
+  gap: 0.45rem;
+  color: var(--blue);
+  font-size: 0.9375rem;
+  font-weight: 500;
 }
 
-.contact-links a:hover {
-  color: var(--olive-900);
-}
-
-@media (max-width: 640px) {
+@media (max-width: 760px) {
   .hero {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 3rem 0;
   }
 
   .hero-photo {
-    width: 260px;
-    height: 260px;
+    max-width: 260px;
   }
 }
 
-/* Now */
+/* ---------- Now ---------- */
+
 .pub-header {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.75rem;
 }
 
+/* Tertiary action: text only, Blue, with a typographic indicator */
 .view-all {
-  font-size: 0.95rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
   white-space: nowrap;
+  color: var(--blue);
 }
 
 .now-list {
-  margin-top: 1.5rem;
+  margin-top: 2.5rem;
 }
 
+/* An open layout with rules — not a stack of containers */
 .now-card {
   display: flex;
-  gap: 1.25rem;
-  padding: 1.5rem 0;
-  border-top: 1px solid var(--border);
+  gap: 1.5rem;
+  padding: 1.75rem 0;
+  border-top: 1px solid var(--mist);
 }
 
 .now-card:first-child {
@@ -142,103 +187,143 @@
 
 .now-icon {
   flex-shrink: 0;
-  width: 44px;
-  height: 44px;
-  border-radius: 8px;
+  width: 42px;
+  height: 42px;
+  border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--stone);
+  color: var(--graphite);
   background: var(--surface);
+  border: 1px solid var(--border-quiet);
 }
 
+/* Mono label mode */
 .now-date {
   font-family: var(--mono);
-  color: var(--text-secondary);
-  font-size: 0.8rem;
-  margin: 0 0 0.3rem;
+  color: var(--graphite);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0 0 0.4rem;
 }
 
 .now-headline {
   font-family: var(--sans);
-  font-size: 1.3rem;
+  font-size: 1.1875rem;
   font-weight: 600;
-  color: var(--navy-700);
-  margin: 0 0 0.3rem;
+  color: var(--onyx);
+  line-height: 1.3;
+  margin: 0 0 0.35rem;
 }
 
+/* The work itself is the idea — serif */
 .now-title {
   font-family: var(--serif);
-  font-size: 1.05rem;
+  font-size: 1.125rem;
   font-style: italic;
-  color: var(--text);
-  margin: 0 0 0.3rem;
+  letter-spacing: -0.015em;
+  line-height: 1.3;
+  color: var(--navy);
+  margin: 0 0 0.4rem;
 }
 
 .now-detail {
-  color: var(--text-secondary);
+  color: var(--graphite);
   margin: 0;
-  font-size: 1rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  max-width: 68ch;
 }
 
-/* CTA */
+/* ---------- CTA ----------
+   A Navy field: a saturated block carrying a statement, not a container
+   of details. Flat, square, generously padded. */
+
 .cta {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 1.5rem;
-  padding: 2rem;
+  gap: 2rem;
+  padding: 3rem;
   max-width: 960px;
-  margin: 2rem auto 0;
-  background: var(--surface);
-  border-radius: 12px;
-  box-shadow: var(--shadow-sm);
+  margin: 0 auto 5rem;
+  background: var(--navy);
+  border-radius: 0;
+  box-shadow: var(--shadow-lg);
 }
 
 .cta-left {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
+/* On a colored field, the badge becomes translucent Paper */
 .cta-badge {
   flex-shrink: 0;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: var(--navy-700);
+  width: 42px;
+  height: 42px;
+  border-radius: 0;
+  background: rgba(253, 252, 253, 0.18);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .cta-badge .icon {
-  color: var(--bg);
+  color: var(--paper);
 }
 
 .cta-text {
   margin: 0;
-  font-size: 1.15rem;
-  color: var(--text);
+  font-size: 1.25rem;
+  line-height: 1.35;
+  color: var(--paper);
+  max-width: 34ch;
 }
 
 .cta-text em {
-  color: var(--navy-700);
+  color: var(--periwinkle);
   font-family: var(--serif);
   font-style: italic;
 }
 
-/* Footer */
+/* Blue on Navy would not survive — the action inverts to Paper */
+.cta .btn-primary {
+  background: var(--paper);
+  border-color: var(--paper);
+  color: var(--navy);
+}
+
+.cta .btn-primary:hover {
+  background: var(--periwinkle);
+  border-color: var(--periwinkle);
+  color: var(--navy);
+}
+
+@media (max-width: 600px) {
+  .cta {
+    padding: 2rem;
+  }
+
+  .cta-text {
+    font-size: 1.125rem;
+  }
+}
+
+/* ---------- Footer ---------- */
+
 .site-footer-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.25rem;
   max-width: 960px;
   margin: 0 auto;
-  padding: 1.5rem;
+  padding: 2rem 1.5rem;
 }
 
 .footer-brand {
@@ -246,48 +331,29 @@
   align-items: center;
   gap: 0.75rem;
   font-family: var(--mono);
-  font-size: 0.85rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--graphite);
 }
 
 .footer-links {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.75rem;
   flex-wrap: wrap;
+  font-size: 0.9375rem;
+  font-weight: 500;
 }
 
 .footer-icons {
   display: flex;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
 .footer-icons a {
-  color: var(--olive-700);
+  color: var(--graphite);
 }
 
 .footer-icons a:hover {
-  color: var(--olive-900);
-}
-
-/* Language switcher */
-.lang-switch {
-  font-family: var(--mono);
-  font-size: 0.85rem;
-}
-
-.lang-switch a {
-  color: var(--olive-700);
-}
-
-.lang-switch a:hover {
-  color: var(--olive-900);
-}
-
-.lang-current {
-  color: var(--navy-700);
-  font-weight: 500;
-}
-
-.lang-sep {
-  color: var(--border);
-  margin: 0 0.35rem;
+  color: var(--blue);
 }
