@@ -18,7 +18,7 @@
   --paper: #FDFCFD;
   --graphite: #2D2D36;
   --mist: #C9CAD4;
-  --periwinkle: #BFC3FF;
+  --blue-bell: #10A4FF;
 
   --green-deep: #043C12;
   --green-signal: #077A10;
@@ -67,7 +67,7 @@
 /* ---- Roles: dark ----
    Onyx is the dark surface, flat: the Onyx→Navy gradient the system
    normally specifies is deliberately omitted.
-   Blue cannot survive here, so Periwinkle takes its role throughout. */
+   Blue cannot survive here, so Blue Bell takes its role throughout. */
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -76,8 +76,8 @@
     --bg: var(--onyx);
     --text: var(--paper);
     --text-muted: rgba(253, 252, 253, 0.75);
-    --accent: var(--periwinkle);
-    --work-title: var(--periwinkle);
+    --accent: var(--blue-bell);
+    --work-title: var(--blue-bell);
 
     --rule: rgba(253, 252, 253, 0.18);
     --rule-strong: rgba(253, 252, 253, 0.5);
@@ -87,7 +87,7 @@
     --nav-bg: rgba(16, 16, 21, 0.78);
     --overlay-bg: rgba(16, 16, 21, 0.92);
 
-    --btn-bg: var(--periwinkle);
+    --btn-bg: var(--blue-bell);
     --btn-text: var(--onyx);
     --btn-hover-bg: var(--paper);
     --btn-hover-text: var(--onyx);
@@ -104,8 +104,8 @@
   --bg: var(--onyx);
   --text: var(--paper);
   --text-muted: rgba(253, 252, 253, 0.75);
-  --accent: var(--periwinkle);
-  --work-title: var(--periwinkle);
+  --accent: var(--blue-bell);
+  --work-title: var(--blue-bell);
 
   --rule: rgba(253, 252, 253, 0.18);
   --rule-strong: rgba(253, 252, 253, 0.5);
@@ -115,7 +115,7 @@
   --nav-bg: rgba(16, 16, 21, 0.78);
   --overlay-bg: rgba(16, 16, 21, 0.92);
 
-  --btn-bg: var(--periwinkle);
+  --btn-bg: var(--blue-bell);
   --btn-text: var(--onyx);
   --btn-hover-bg: var(--paper);
   --btn-hover-text: var(--onyx);
@@ -303,7 +303,7 @@ section h2 {
 
 /* ---------- Buttons ----------
    Square. Blue is the natural primary because it is the focus color;
-   on dark it becomes Periwinkle. */
+   on dark it becomes Blue Bell. */
 
 .btn-primary {
   display: inline-block;

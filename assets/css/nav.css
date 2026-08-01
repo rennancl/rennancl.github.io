@@ -342,7 +342,7 @@
 }
 
 .cta-text em {
-  color: var(--periwinkle);
+  color: var(--blue-bell);
   font-family: var(--serif);
   font-style: italic;
 }
@@ -355,8 +355,8 @@
 }
 
 .cta .btn-primary:hover {
-  background: var(--periwinkle);
-  border-color: var(--periwinkle);
+  background: var(--blue-bell);
+  border-color: var(--blue-bell);
   color: var(--navy);
 }
 

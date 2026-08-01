@@ -26,8 +26,8 @@ Nothing outside this set should appear as a raw value in a stylesheet.
   --graphite:   #2D2D36;  /* secondary dark surfaces and text */
   --mist:       #C9CAD4;  /* dividers, metadata               */
 
-  /* Blue, adapted to survive a dark background */
-  --periwinkle: #BFC3FF;
+  /* Blue, carried into the dark — takes Onyx text when used as a fill */
+  --blue-bell: #10A4FF;
 
   /* Semantic — two levels only, Deep for surfaces, Signal for communication */
   --green-deep:    #043C12;   --green-signal:  #077A10;
@@ -63,7 +63,23 @@ Further hierarchy comes from **opacity over these tokens**, not new color values
 
 These four account for the overwhelming majority of every composition, in the hierarchy **Paper + Onyx → Navy → Blue → semantic**. Most work should feel complete with the base palette alone. Blue is the most active color and should occupy less area than Navy or Paper.
 
-**On dark surfaces**, Blue is nearly unreadable and is replaced by `Periwinkle` — kickers, mono annotations, active indicators, links. It is not a fifth brand color; it is Blue adapted to survive a dark background.
+### Blue on dark surfaces
+
+Blue is nearly unreadable on Onyx — around **1.9:1**, barely separable from the background. On dark surfaces its role passes to **Blue Bell `#10A4FF`**: kickers, links, active indicators, mono annotations, icon strokes, and the accent on any dark field.
+
+| Accent on Onyx      | Contrast    |
+| ------------------- | ----------- |
+| `--blue` `#1111DE`  | 1.95:1 ✗    |
+| `--blue-bell` `#10A4FF` | 7.02:1 ✓ |
+
+Blue Bell is not a fifth brand color. It is Blue carried into the dark, saturated enough to still read as *blue* rather than drifting into lavender.
+
+**A Blue Bell fill takes Onyx text, not Paper.** It is bright enough to behave as a light color — Paper on Blue Bell is only 2.6:1, while Onyx on Blue Bell is 7.0:1. This inverts the light-mode rule, where a Blue fill takes Paper text.
+
+The distinction is between marks and fills:
+
+* **as a mark** — text, strokes, rules — Blue fails on dark and must become Blue Bell;
+* **as a fill** — buttons, badges — either works, but the text on top flips accordingly.
 
 ### Semantic layer
 
@@ -118,7 +134,7 @@ Sans weights: `400` normal · `500` emphasis and UI · `600` section labels · `
 
 ### Kicker
 
-A short mono label above a serif heading, naming the territory without adding a second headline. `Periwinkle` on dark surfaces.
+A short mono label above a serif heading, naming the territory without adding a second headline. `Blue Bell` on dark surfaces.
 
 ```css
 font-family: var(--mono);
